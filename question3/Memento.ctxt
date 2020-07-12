@@ -1,6 +1,13 @@
 #BlueJ class context
-comment0.params=c
-comment0.target=Memento(Cotisant)
+comment0.target=Memento
 comment1.params=c
-comment1.target=void\ setState(Cotisant)
-numComments=2
+comment1.target=Memento(question1.Cotisant)
+comment2.params=c
+comment2.target=void\ setState(question1.Cotisant)
+comment3.params=c\ e
+comment3.target=void\ setState(question1.Cotisant,\ org.jdom.Element)
+comment4.params=c\ e
+comment4.target=void\ setState(question1.Contributeur,\ org.jdom.Element)
+comment5.params=g\ e
+comment5.target=void\ setState(question1.GroupeDeContributeurs,\ org.jdom.Element)
+numComments=6

@@ -6,51 +6,57 @@ import java.util.NoSuchElementException;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Stack;
+import java.util.stream.*;
 
 public class GroupeDeContributeurs extends Cotisant implements Iterable<Cotisant>{
   private List<Cotisant> liste;
   
   public GroupeDeContributeurs(String nomDuGroupe){
     super(nomDuGroupe);
-    // a completer
+     this.liste = new ArrayList<Cotisant>();
   }
   
   public void ajouter(Cotisant cotisant){
-    // a completer
+     if (cotisant == null) throw new IllegalArgumentException();
+        liste.add(cotisant);
+        cotisant.setParent(this);
   }
   
   
   public int nombreDeCotisants(){
-    int nombre = 0;
-    // a completer
-    return nombre;
+       return liste.stream().map(c -> c instanceof GroupeDeContributeurs ? ((GroupeDeContributeurs)c).nombreDeCotisants() : 1).collect(Collectors.summingInt(t -> t.intValue()));
   }
   
   public String toString(){
-    String str = new String();
-    // a completer
-    return str;
+    StringBuffer buffer = new StringBuffer();
+        buffer.append("<GroupeDeContributeurs>\n");
+        for (Cotisant cotisant : liste) {
+            buffer.append(cotisant.toString() + "\n");
+        }
+        buffer.append("</GroupeDeContributeurs>");
+        return buffer.toString();
   }
   
   public List<Cotisant> getChildren(){
-    return null;// a completer
+    return new ArrayList<>(liste);
   }
   
   public void debit(int somme) throws SoldeDebiteurException{
-    // a completer
+      for (Cotisant cotisant : liste) {
+            cotisant.debit(somme);
+        }
   }
   
   public void credit(int somme){
-    // a completer
+    for (Cotisant cotisant : liste) {
+            cotisant.credit(somme);
+        }
   }
   
   public int solde(){
-    int solde = 0;
-    // a completer
-    return solde;
-  }
+   return liste.stream().map(c -> c.solde()).collect(Collectors.summingInt(t -> t.intValue()));}
   
-  // mÃ©thodes fournies
+  // méthodes fournies
   
  public Iterator<Cotisant> iterator(){
     return new GroupeIterator(liste.iterator());

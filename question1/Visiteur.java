@@ -1,3 +1,4 @@
+ 
 package question1;
 
 public abstract interface Visiteur<T> {

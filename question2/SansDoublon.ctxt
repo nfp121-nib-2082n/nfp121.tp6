@@ -1,6 +1,11 @@
 #BlueJ class context
-comment0.params=c
-comment0.target=java.lang.Boolean\ visite(question1.Contributeur)
-comment1.params=g
-comment1.target=java.lang.Boolean\ visite(question1.GroupeDeContributeurs)
-numComments=2
+comment0.target=SansDoublon
+comment1.params=c
+comment1.target=java.lang.Boolean\ visite(question1.Contributeur)
+comment2.params=g
+comment2.target=java.lang.Boolean\ visite(question1.GroupeDeContributeurs)
+comment3.params=c
+comment3.target=java.lang.Boolean\ visiteInternal(question1.Contributeur)
+comment4.params=g
+comment4.target=java.lang.Boolean\ visiteInternal(question1.GroupeDeContributeurs)
+numComments=5

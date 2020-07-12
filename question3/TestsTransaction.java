@@ -36,7 +36,7 @@ public class TestsTransaction extends junit.framework.TestCase{
         try{
             transaction.debit(120);
         }catch(Exception e){}
-        assertEquals(" Transaction erronÃ©e , l'ancien solde n'est pas restituÃ© !!! ", ancienSolde, g.solde());
+        assertEquals(" Transaction erronée , l'ancien solde n'est pas restitué !!! ", ancienSolde, g.solde());
     }
 
     public void testDebitAvecTransaction2(){  
@@ -79,7 +79,7 @@ public class TestsTransaction extends junit.framework.TestCase{
         }catch(Exception e){
         }
 
-        assertTrue(" solde erronÃ©, revoyez la transaction !!! ", g.solde()==ancienSolde);
+        assertTrue(" solde erroné, revoyez la transaction !!! ", g.solde()==ancienSolde);
     }
 
     public void testTransactionDebitSure5(){  
@@ -127,7 +127,7 @@ public class TestsTransaction extends junit.framework.TestCase{
             fail();
         }catch(Exception e){
         }  	    
-        assertTrue(" solde erronÃ©, revoyez la transaction !!! ", g.solde()== ancienSolde);
+        assertTrue(" solde erroné, revoyez la transaction !!! ", g.solde()== ancienSolde);
 
     }
 
@@ -173,9 +173,9 @@ public class TestsTransaction extends junit.framework.TestCase{
             transaction.endTransaction();
             transaction.endTransaction();
         }catch(Exception e){
-            fail("revoyez les transactions imbriquÃ©es");
+            fail("revoyez les transactions imbriquées");
         }
         g.credit(60);
-        assertEquals(" solde erronÃ©, revoyez la transaction !!! ", ancienSolde, g.solde());
+        assertEquals(" solde erroné, revoyez la transaction !!! ", ancienSolde, g.solde());
     }
 }

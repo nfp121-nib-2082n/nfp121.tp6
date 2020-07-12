@@ -1,7 +1,11 @@
 #BlueJ class context
-comment0.params=cotisant
-comment0.target=TransactionDebit(Cotisant)
-comment1.target=void\ beginTransaction()
-comment2.target=void\ endTransaction()
-comment3.target=void\ rollbackTransaction()
-numComments=4
+comment0.target=TransactionDebit
+comment1.params=cotisant
+comment1.target=TransactionDebit(question1.Cotisant)
+comment2.params=
+comment2.target=void\ beginTransaction()
+comment3.params=
+comment3.target=void\ endTransaction()
+comment4.params=
+comment4.target=void\ rollbackTransaction()
+numComments=5
